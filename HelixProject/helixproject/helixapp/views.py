@@ -12,13 +12,13 @@ def index(request):
 def game(request):
 	return render(request,'helixapp/game.html')
 	
-def gameInstructions(request):
+def game_instructions(request):
 	return render(request,'helixapp/game/instructions.html')
 
-def gameNew(request):
-	return render(request,'helixapp/game/new.html')
+def game_new(request):
+	return render(request,'helixapp/game/riddle.html')
 
-def gameRiddle(request):
+def game_riddle(request):
 	return render(request,'helixapp/game/riddle.html')
 	
 	
