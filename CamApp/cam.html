@@ -2,42 +2,7 @@
 <html>
 <body>
 
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js?ver=1.3.2'></script>
-<script type='text/javascript'>
-    
-    $(function(){
-    
-        var iFrames = $('iframe');
-      
-     function iResize() {
-     
-      for (var i = 0, j = iFrames.length; i < j; i++) {
-        iFrames[i].style.height = iFrames[i].contentWindow.document.body.offsetHeight + 'px';}
-         }
-         
-         if ($.browser.safari || $.browser.opera) { 
-         
-            iFrames.load(function(){
-                setTimeout(iResize, 0);
-               });
-            
-            for (var i = 0, j = iFrames.length; i < j; i++) {
-           var iSource = iFrames[i].src;
-           iFrames[i].src = '';
-           iFrames[i].src = iSource;
-               }
-               
-         } else {
-            iFrames.load(function() { 
-                this.style.height = this.contentWindow.document.body.offsetHeight + 'px';
-            });
-         }
-        
-        });
-
-</script>
-
-<iframe src="http://0.0.0.0:1212" class="iframe" scrolling="no" frameborder="0"></iframe>
+<iframe src="http://0.0.0.0:1212" class="iframe" scrolling="no" width=800px height=600px frameborder="0"></iframe>
 
 </body>
 </html>
