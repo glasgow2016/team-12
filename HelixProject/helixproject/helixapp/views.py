@@ -23,7 +23,6 @@ def index(request):
         pc=pc+1
         response.set_cookie(str(pc), pc)
 		
-	print request.COOKIES[str(pc)]
     return response
 
 	
