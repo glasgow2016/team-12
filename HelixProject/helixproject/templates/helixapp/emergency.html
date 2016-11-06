@@ -2,15 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Emergency</title>
+    <title>Title</title>
 </head>
 <body>
     {% load static %}
-    	<a id="index" href="/helixapp/index" class="btn btn-floating btn-default btn-lg col-xs-12" role="button" style="height: 20vh;font-size: 40px; padding-top:50px">
-        <span class="glyphicon glyphicon-home"></span>
-        </a>
-
-        <img src="{% static "emergency.gif" %}" style='position:fixed;top:20vh;left:0px;width:100%;height:80vh;z-index:-1;'>
-
+    	<img src='{% static "emergency.gif" %}' style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+		<script type="text/javascript" src="https://secure.skypeassets.com/i/scom/js/skype-uri.js"></script>
+		<div id="SkypeButton_Call_bibko-95_1">
+		 <script type="text/javascript">
+		 Skype.ui({
+		 "name": "dropdown",
+		 "element": "SkypeButton_Call_bibko-95_1",
+		 "participants": ["bibko-95"],
+		 "imageSize": 32
+		 });
+		 </script>
+</div>
+ </script>
+</div>
 </body>
 </html>
