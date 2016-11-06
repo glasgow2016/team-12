@@ -10,6 +10,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- The browser will (probably) render the width of the page at the width of its own screen -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- Bootstrap (CSS) -->
 		<link rel="stylesheet" href="{% static 'css/style.css' %}" /> <!-- CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- JQuery -->
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <!-- Bootstrap (JS) -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> <!-- jQuery UI -->
@@ -17,28 +18,23 @@
 	</head>
 
 	<body>
-
-		<div>
-			<a href="/helixapp/game/new" class="btn btn-danger btn-lg col-xs-4" role="button">
-				<span class="glyphicon glyphicon-plus"></span>
-				<br/>New game
-			</a>
-		</div>
-
-		<div>
-			<a href="/helixapp/game/solve" class="btn btn-warning btn-lg col-xs-4" role="button">
-				<span class="glyphicon glyphicon-qrcode"></span>
-				<br/>Solve riddle
-			</a>
-		</div>
-
-		<div>
-			  <a href="/helixapp/game/instructions" class="btn btn-warning btn-lg col-xs-4" role="button">
-				  <span class="glyphicon glyphicon-qrcode"></span>
-				  <br/>Instructions
+	    <div>
+			<a a href="/helixapp/game/new" class="btn btn-lg col-xs-4" role="button" style="height: 100vh;background-color:#FFD700; color:#ffffff; font-size:40px; padding-top: 150px">
+			  <span class="fa fa-puzzle-piece"></span>
+			  <br/>New Game
 			  </a>
-		</div>
 
+			  <a href="/helixapp/game/solve" class="btn btn-lg col-xs-4" role="button" style="height:100vh; font-size: 40px; padding-top:150px">
+			  <font color="#FFD700"><span class="fa fa-qrcode"></span>
+			  <br/>Solve Riddle
+			  </a>
+
+			  <a href="/helixapp/game/instructions" class="btn btn-lg col-xs-4" role="button" style="height:100vh;background-color:#FFD700; color:#ffffff; font-size: 40px; padding-top: 150px">
+			  <span class="glyphicon glyphicon-info-sign"></span>
+			  <br/>Instructions
+			  </a>
+
+   		 </div>
 
 	</body>
 	
