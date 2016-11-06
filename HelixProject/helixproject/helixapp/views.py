@@ -85,22 +85,22 @@ def game_new(request):
 def game_solve(request):
 	global savedRiddlesDict
 	global pc
-	
+	context_dict = {}
 	if request.method == "POST":
+		context_dict = {"errorMessage" : "You have chosen the wrong location. Please try again!"}
 		securityCode = request.POST.get("security_code" , "")
 		if	savedRiddlesDict.has_key(securityCode):
-			print "value in dict"
 			location = savedRiddlesDict[securityCode]
 			if str(location) == str(request.COOKIES[str(pc)]):
-				print "right location"
-
 				x = random.choice(questDict.keys())
-				context_dict = {"code": securityCode,"riddle": questDict[x]}
+				context_dict = {"code": securityCode, "riddle": questDict[x]}
 				savedRiddlesDict[securityCode] = x
 				return render(request,'helixapp/game/riddle.html' , context_dict)		
 			else:
-				print "wrong location"
-
+				return render(request,'helixapp/game/wrong.html')
+		else:
+			return render(request,'helixapp/game/wrong.html')
+			
 	return render(request,'helixapp/game/solve.html')
 	
 	
