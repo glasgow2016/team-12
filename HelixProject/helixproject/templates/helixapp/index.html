@@ -4,55 +4,82 @@
 
 <html lang="en">
 
-	<head>
-		<title>Helix</title>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- The browser will (probably) render the width of the page at the width of its own screen -->
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- Bootstrap (CSS) -->
-		<link rel="stylesheet" href="{% static 'css/style.css' %}" /> <!-- CSS -->
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- JQuery -->
-		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <!-- Bootstrap (JS) -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> <!-- jQuery UI -->
-		<!--<script src="{% static 'js/script.js' %}"></script> &lt;!&ndash; JS &ndash;&gt;-->
-	</head>
+<head>
+	<title>Helix</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- The browser will (probably) render the width of the page at the width of its own screen -->
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- Bootstrap (CSS) -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" /> <!-- CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- JQuery -->
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <!-- Bootstrap (JS) -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> <!-- jQuery UI -->
+	<!--<script src="{% static 'js/script.js' %}"></script> &lt;!&ndash; JS &ndash;&gt;-->
+</head>
 
-	<body>
-		<div>
-		  <a id="emergency" href="/helixapp/emergency" class="btn btn-danger btn-lg col-xs-4" role="button" style="height:50vh; font-size:40px; padding-top: 60px">
-		  <span class="fa fa-phone-square"></span>
-		  <br/>Emergency
-		  </a>
+<body>
+<script>
+speak('Emergency, Map, Camera, History, Activities, Game.');
+function speak(text, callback) {
+	var u = new SpeechSynthesisUtterance();
+	u.text = text;
+	u.lang = 'en-US';
+	u.onend = function () {
+		if (callback) {
+			callback();
+		}
+	};
+	u.onerror = function (e) {
+		if (callback) {
+			callback(e);
+		}
+	};
+	speechSynthesis.speak(u);
+}
+ask('What do you choose.', function (err, result) {
+    if (result && result.transcript == 'blue') {
+        speak('Right!');
+    } else {
+        speak('Wrong!');
+    }
+});
 
-		  <a id="map" href="/helixapp/maps" class="btn btn-warning btn-lg col-xs-4" role="button" style="height:50vh; font-size: 40px; padding-top: 60px">
-		  <span class="glyphicon glyphicon-map-marker"></span>
-		  <br/>Map
-		  </a>
+</script>
+	<div>
+	  <a id="emergency" href="/helixapp/emergency" class="btn btn-danger btn-lg col-xs-4" role="button" style="height:50vh; font-size:40px; padding-top: 60px">
+	  <span class="fa fa-phone-square"></span>
+	  <br/>Emergency
+	  </a>
 
-		  <a id="camera" href="/helixapp/camera" class="btn btn-primary btn-lg col-xs-4" role="button" style="height:50vh; font-size: 40px; padding-top: 60px">
-		  <span class="glyphicon glyphicon-camera"></span>
-		  <br/>Camera
-		  </a>
+	  <a id="map" href="/helixapp/maps" class="btn btn-warning btn-lg col-xs-4" role="button" style="height:50vh; font-size: 40px; padding-top: 60px">
+	  <span class="glyphicon glyphicon-map-marker"></span>
+	  <br/>Map
+	  </a>
 
-		</div>
-		<div>
-		  <a id="history" href="/helixapp/history" class="btn btn-success btn-lg col-xs-4" role="button" style="height:50vh; font-size: 40px; padding-top: 60px">
-		  <span class="glyphicon glyphicon-education"></span>
-		  <br/>History
-		  </a>
+	  <a id="camera" href="/helixapp/camera" class="btn btn-primary btn-lg col-xs-4" role="button" style="height:50vh; font-size: 40px; padding-top: 60px">
+	  <span class="glyphicon glyphicon-camera"></span>
+	  <br/>Camera
+	  </a>
 
-		  <a id="activities" href="/helixapp/activities" class="btn btn-info btn-lg col-xs-4" role="button" style="height:50vh; font-size: 40px; padding-top: 60px">
-		  <span class="glyphicon glyphicon-tasks"></span>
-		  <br/>Activities
-		  </a>
+	</div>
+	<div>
+	  <a id="history" href="/helixapp/history" class="btn btn-success btn-lg col-xs-4" role="button" style="height:50vh; font-size: 40px; padding-top: 60px">
+	  <span class="glyphicon glyphicon-education"></span>
+	  <br/>History
+	  </a>
 
-		  <a id="game" href="/helixapp/game" class="btn btn-lg col-xs-4" role="button" style="height:50vh;background-color:#FFD700; color:#ffffff; font-size: 40px; padding-top: 60px">
-		  <span class="fa fa-gamepad"></span>
-		  <br/>Game
-		  </a>
+	  <a id="activities" href="/helixapp/activities" class="btn btn-info btn-lg col-xs-4" role="button" style="height:50vh; font-size: 40px; padding-top: 60px">
+	  <span class="glyphicon glyphicon-tasks"></span>
+	  <br/>Activities
+	  </a>
 
-		</div>
+	  <a id="game" href="/helixapp/game" class="btn btn-lg col-xs-4" role="button" style="height:50vh;background-color:#FFD700; color:#ffffff; font-size: 40px; padding-top: 60px">
+	  <span class="fa fa-gamepad"></span>
+	  <br/>Game
+	  </a>
 
-	</body>
+	</div>
+
+</body>
 
 </html>

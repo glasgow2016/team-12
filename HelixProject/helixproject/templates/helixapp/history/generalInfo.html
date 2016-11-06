@@ -12,11 +12,29 @@
 <body>
     {% load static %}
     <img src="{% static "general.jpg" %}" style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
-    <center><b><i><h1>The Helix was borne from an idea in 2003 to build an ecopark
-    as part of the Falkirk Greenscape Initiative,
-    transforming 350 hectares of land between Falkirk and Grangemouth.
-    Today, The Helix connects 16 local communities through our extensive path networks.
-    The Helix remains busy to this day, with runners, dog walkers,
-    Nordic Walkers, cyclists and skaters all being active and enjoying The Helix.</h1></i></b>
+    <script>
+        var text = "The Helix was borne from an idea in 2003 to build an ecopark as part of the Falkirk Greenscape Initiative,transforming 350 hectares of land between Falkirk and Grangemouth.Today, The Helix connects 16 local communities through our extensive path networks.The Helix remains busy to this day, with runners, dog walkers,Nordic Walkers, cyclists and skaters all being active and enjoying The Helix."
+        text = text.bold();
+        speak(text);
+        document.write(text.fontsize("6"));
+        function speak(text, callback) {
+            var u = new SpeechSynthesisUtterance();
+            u.text = text;
+            u.lang = 'en-US';
+
+            u.onend = function () {
+                if (callback) {
+                    callback();
+                }
+            };
+
+            u.onerror = function (e) {
+                if (callback) {
+                    callback(e);
+                }
+            };
+            speechSynthesis.speak(u);
+        }
+    </script>
 </body>
 </html>
