@@ -90,3 +90,6 @@ def camera(request):
 
 def activities(request):
 	return render(request,'helixapp/activities.html')
+
+def emergency(request):
+	return render(request,'helixapp/emergency.html')

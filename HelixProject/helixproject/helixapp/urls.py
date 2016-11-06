@@ -14,4 +14,5 @@ urlpatterns = patterns('',
 		url(r'^history/favourites/$', views.history_favourites, name='favourites'),
 		url(r'^camera/$', views.camera, name='camera'),
 		url(r'^activities/$', views.activities, name='activities'),
+		url(r'^emergency/$', views.emergency, name='emergency'),
 	)
