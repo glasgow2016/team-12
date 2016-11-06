@@ -128,3 +128,7 @@ def activities(request):
 
 def emergency(request):
 	return render(request,'helixapp/emergency.html')
+
+def twitter(request):
+	return render(request,'helixapp/camera/twitter.html')
+
