@@ -5,7 +5,7 @@
 <html lang="en">
 
 	<head>
-		<title>Helix</title>
+		<title>Locations</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- The browser will (probably) render the width of the page at the width of its own screen -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- Bootstrap (CSS) -->
@@ -17,6 +17,11 @@
 	</head>
 
 	<body>
+		<div>
+			<a id="index" href="/helixapp/index" class="btn btn-floating btn-default btn-lg col-xs-12" role="button" style="height: 20vh;font-size: 40px; padding-top:25px">
+        	<span class="glyphicon glyphicon-home"></span>
+        	</a>
+		</div>
 		{% load static %}
     	<img src="{% static 'game.jpg' %}" style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
 		
