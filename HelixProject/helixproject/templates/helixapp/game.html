@@ -5,7 +5,7 @@
 <html lang="en">
 
 	<head>
-		<title>Helix</title>
+		<title>Game</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1"> <!-- The browser will (probably) render the width of the page at the width of its own screen -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- Bootstrap (CSS) -->
@@ -19,17 +19,20 @@
 
 	<body>
 	    <div>
-			<a a href="/helixapp/game/new" class="btn btn-lg col-xs-4" role="button" style="height: 100vh;background-color:#FFD700; color:#ffffff; font-size:40px; padding-top: 150px">
+	    	<a id="index" href="/helixapp/index" class="btn btn-floating btn-default btn-lg col-xs-12" role="button" style="height: 20vh;font-size: 40px; padding-top:25px">
+        	<span class="glyphicon glyphicon-home"></span>
+        	</a>
+			<a a href="/helixapp/game/new" class="btn btn-lg col-xs-4" role="button" style="height: 80vh;background-color:#FFD700; color:#ffffff; font-size:40px; padding-top: 120px">
 			  <span class="fa fa-puzzle-piece"></span>
 			  <br/>New Game
 			  </a>
 
-			  <a href="/helixapp/game/solve" class="btn btn-lg col-xs-4" role="button" style="height:100vh; font-size: 40px; padding-top:150px">
+			  <a href="/helixapp/game/solve" class="btn btn-lg col-xs-4" role="button" style="height:80vh; font-size: 40px; padding-top:120px">
 			  <font color="#FFD700"><span class="fa fa-qrcode"></span>
 			  <br/>Solve Riddle
 			  </a>
 
-			  <a href="/helixapp/game/instructions" class="btn btn-lg col-xs-4" role="button" style="height:100vh;background-color:#FFD700; color:#ffffff; font-size: 40px; padding-top: 150px">
+			  <a href="/helixapp/game/instructions" class="btn btn-lg col-xs-4" role="button" style="height:80vh;background-color:#FFD700; color:#ffffff; font-size: 40px; padding-top: 120px">
 			  <span class="glyphicon glyphicon-info-sign"></span>
 			  <br/>Instructions
 			  </a>

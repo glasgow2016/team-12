@@ -19,4 +19,5 @@ urlpatterns = patterns('',
 		url(r'^camera/location/', views.location, name='location'),
 		url(r'^activities/$', views.activities, name='activities'),
 		url(r'^emergency/$', views.emergency, name='emergency'),
+		url(r'^index/$', views.index, name='index'),
 	)

@@ -128,3 +128,6 @@ def activities(request):
 
 def emergency(request):
 	return render(request,'helixapp/emergency.html')
+
+def index(request):
+	return render(request,'helixapp/index.html')

@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Maps</title>
 </head>
 <body>
     {% load static %}
-    <img src="{% static "map.JPG" %}" style='position:fixed;top:0px;left:0px;width:100%;height:100%;z-index:-1;'>
+    <a id="index" href="/helixapp/index" class="btn btn-floating btn-default btn-lg col-xs-12" role="button" style="height: 20vh;top:0px;font-size: 40px; padding-top:25px">
+    <span class="glyphicon glyphicon-home"></span>
+    </a>
+    <img src="{% static "map.JPG" %}" style='position:fixed;top:20vh;left:0px;width:100%;height:80vh;z-index:-1;'>
 
 </body>
 </html>
