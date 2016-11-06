@@ -36,13 +36,6 @@ function speak(text, callback) {
 	};
 	speechSynthesis.speak(u);
 }
-ask('What do you choose.', function (err, result) {
-    if (result && result.transcript == 'blue') {
-        speak('Right!');
-    } else {
-        speak('Wrong!');
-    }
-});
 
 </script>
 	<div>
