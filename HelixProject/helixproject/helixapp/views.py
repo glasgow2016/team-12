@@ -32,6 +32,7 @@ def getTree():
 def game(request):
 	return render(request,'helixapp/game.html')
 
+
 def getRandomSecurityKey():
 	global savedRiddlesDict
 	key = random.randint(10000 , 99999)
@@ -69,3 +70,23 @@ def game_solve(request):
 	return render(request,'helixapp/game/solve.html')
 	
 	
+def maps(request):
+	return render(request,'helixapp/maps.html')
+
+def history(request):
+	return render(request,'helixapp/history.html')
+
+def history_generalInfo(request):
+	return render(request,'helixapp/history/generalInfo.html')
+
+def history_current(request):
+	return render(request,'helixapp/history/current.html')
+
+def history_favourites(request):
+	return render(request,'helixapp/history/favourites.html')
+
+def camera(request):
+	return render(request,'helixapp/camera.html')
+
+def activities(request):
+	return render(request,'helixapp/activities.html')

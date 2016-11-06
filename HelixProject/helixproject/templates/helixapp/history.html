@@ -5,25 +5,24 @@
     <title>Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- The browser will (probably) render the width of the page at the width of its own screen -->
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> <!-- Bootstrap (CSS) -->
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" /> <!-- CSS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script> <!-- JQuery -->
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <!-- Bootstrap (JS) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> <!-- jQuery UI -->
-    <!--<script src="{% static 'js/script.js' %}"></script> &lt;!&ndash; JS &ndash;&gt;-->
+
 </head>
 <body>
     <div>
-        <a id="general" href="#" class="btn btn-success btn-lg col-xs-4" role="button" style="height: 100vh; font-size:40px; padding-top: 150px">
+        <a id="general" href="/helixapp/history/generalInfo" class="btn btn-success btn-lg col-xs-4" role="button" style="height: 100vh; font-size:40px; padding-top: 150px">
           <span class="glyphicon glyphicon-info-sign"></span>
           <br/>General</br> Information
           </a>
 
-          <a id="current" href="#" class="btn  btn-lg col-xs-4" role="button" style="height:100vh; font-size: 40px; padding-top:150px">
+          <a id="current" href="/helixapp/history/current" class="btn  btn-lg col-xs-4" role="button" style="height:100vh; font-size: 40px; padding-top:150px">
           <font color="green"><span class="glyphicon glyphicon-pushpin"></span>
           <br/>Current </br> Location </font>
           </a>
 
-          <a id="favourites" href="#" class="btn btn-success btn-lg col-xs-4" role="button" style="height:100vh; font-size: 40px; padding-top: 150px">
+          <a id="favourites" href="/helixapp/history/favourites" class="btn btn-success btn-lg col-xs-4" role="button" style="height:100vh; font-size: 40px; padding-top: 150px">
           <span class="glyphicon glyphicon-thumbs-up"></span>
           <br/>Favourite</br> Places
           </a>
