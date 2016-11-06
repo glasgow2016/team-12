@@ -4,7 +4,12 @@ from django.http import HttpResponse
 from helixapp.models import tree
 import random
 
+# pc = unique machine id
 pc=0
+
+#only two test devices
+# 1 is Laptop
+# 2 is Pi
 questDict={1: "Which is the device that has a camera", 2: "Which is the device that doesn't have a camera"}
 savedRiddlesDict={}
 
@@ -17,6 +22,8 @@ def index(request):
     except:
         pc=pc+1
         response.set_cookie(str(pc), pc)
+		
+	print request.COOKIES[str(pc)]
     return response
 
 	
@@ -35,6 +42,8 @@ def game(request):
 
 def getRandomSecurityKey():
 	global savedRiddlesDict
+	
+	#unique key to complete challenges
 	key = random.randint(10000 , 99999)
 	while(savedRiddlesDict.has_key(str(key))):
 		key = random.randint(10000 , 99999)
@@ -44,8 +53,26 @@ def getRandomSecurityKey():
 def game_instructions(request):
 	return render(request,'helixapp/game/instructions.html')
 
+		
+def locations(request):
+	locations = {0: {"name": "The laptop with the camera", "address": "0.0.0.0:1212"}}
+	context_dict = {"locations" : locations}
 	
+	return render(request,'helixapp/camera/locations.html' , context_dict)
+		
+def location(request):
+	#context_dict = {"address" : address}
 	
+	return render(request,'helixapp/camera/location.html')
+
+		
+def live(request):
+	return render(request,'helixapp/camera/live.html')
+
+			
+def selfie(request):
+	return render(request,'helixapp/camera/selfie.html')
+
 def game_new(request):
 	global questDict
 	global savedRiddlesDict
@@ -58,15 +85,23 @@ def game_new(request):
 	
 def game_solve(request):
 	global savedRiddlesDict
+	global pc
+	
 	if request.method == "POST":
 		securityCode = request.POST.get("security_code" , "")
 		if	savedRiddlesDict.has_key(securityCode):
+			print "value in dict"
 			location = savedRiddlesDict[securityCode]
-			if location == pc:
+			if str(location) == str(request.COOKIES[str(pc)]):
+				print "right location"
+
 				x = random.choice(questDict.keys())
 				context_dict = {"code": securityCode,"riddle": questDict[x]}
 				savedRiddlesDict[securityCode] = x
 				return render(request,'helixapp/game/riddle.html' , context_dict)		
+			else:
+				print "wrong location"
+
 	return render(request,'helixapp/game/solve.html')
 	
 	
